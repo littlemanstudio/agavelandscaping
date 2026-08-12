@@ -82,6 +82,8 @@ a { color: inherit; }
   color: var(--ink);
 }
 
+.display--sm { font-size: clamp(28px, 3.4vw, 42px); }
+
 .rule {
   border: 0;
   border-top: 2px solid var(--sage);
@@ -111,6 +113,7 @@ a { color: inherit; }
 .btn svg { transition: transform .3s var(--ease); }
 .btn:hover svg { transform: translateX(4px); }
 .hero-btn:hover svg { transform: translateY(4px); }
+.split-copy p + .btn, .editorial-body p + .btn, .split-copy p + .cta-card-actions { margin-top: 34px; }
 
 .btn--ghost-light { color: var(--white); }
 .btn--ghost-light:hover { background: var(--white); color: var(--grey); }
@@ -429,6 +432,7 @@ a { color: inherit; }
   background: var(--paper);
 }
 .editorial-copy .display { margin-bottom: 44px; }
+.editorial-body h2,
 .editorial-body h3 {
   font-family: var(--font-display);
   font-weight: 500;
@@ -438,6 +442,7 @@ a { color: inherit; }
   color: var(--ink);
   margin: 34px 0 8px;
 }
+.editorial-body h2:first-child,
 .editorial-body h3:first-child { margin-top: 0; }
 .service-bullet {
   display: inline-block;
@@ -633,6 +638,25 @@ a { color: inherit; }
 }
 .footer-col a:hover { color: var(--sage-deep); }
 .footer-col p { line-height: 2; }
+.footer-social {
+  display: flex;
+  gap: 18px;
+  margin-top: 4px;
+}
+.footer-social a {
+  display: inline-flex;
+  color: var(--ink);
+}
+.footer-social svg { width: 21px; height: 21px; }
+.footer-social a:hover { color: var(--sage-deep); }
+.social-inline {
+  display: flex;
+  gap: 18px;
+  margin-top: 6px;
+}
+.social-inline a { display: inline-flex; color: inherit; }
+.social-inline svg { width: 21px; height: 21px; }
+.social-inline a:hover { color: var(--sage-deep); }
 
 .footer-bottom {
   display: flex;
