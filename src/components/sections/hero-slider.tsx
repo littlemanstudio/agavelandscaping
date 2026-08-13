@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
-import { GhostLink } from "@/components/ui/ghost-button";
+import { UnderlineLink } from "@/components/ui/ghost-button";
 
 const slides = [
   { src: "/img/photos/hero-night-yard.jpg", width: 1600, height: 1600 },
@@ -72,9 +72,9 @@ export function HeroSlider() {
           transition={{ delay: 0.6, duration: 0.8 }}
           className="mt-9"
         >
-          <GhostLink href="/contacto" variant="light" animated>
+          <UnderlineLink href="/contacto" light>
             Solicita tu Consulta
-          </GhostLink>
+          </UnderlineLink>
         </motion.div>
       </div>
     </section>
