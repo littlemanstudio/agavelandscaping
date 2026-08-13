@@ -1,10 +1,11 @@
 import Link from "next/link";
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
 import { ArrowIcon } from "@/components/icons/social";
+import { AnimatedBorder } from "@/components/ui/animated-border";
 import { cn } from "@/lib/utils";
 
 const base =
-  "group inline-flex items-center gap-2.5 border px-[30px] py-[15px] font-body text-[13px] font-bold uppercase tracking-[0.22em] transition-colors duration-300";
+  "group relative inline-flex items-center gap-2.5 border px-[30px] py-[15px] font-body text-[13px] font-bold uppercase tracking-[0.22em] transition-colors duration-300";
 
 const variants = {
   dark: "border-ink text-ink hover:bg-ink hover:text-white",
@@ -32,16 +33,19 @@ export function GhostLink({
   children,
   className,
   arrowDirection = "right",
+  animated = false,
   ...props
 }: {
   href: string;
   variant?: Variant;
   children: ReactNode;
   arrowDirection?: "right" | "down";
+  animated?: boolean;
 } & AnchorHTMLAttributes<HTMLAnchorElement>) {
   const isExternal = href.startsWith("http") || href.startsWith("tel:") || href.startsWith("mailto:");
   const content = (
     <>
+      {animated && <AnimatedBorder />}
       {children}
       <ArrowSlide direction={arrowDirection} />
     </>
@@ -66,13 +70,16 @@ export function GhostButton({
   variant = "dark",
   children,
   className,
+  animated = false,
   ...props
 }: {
   variant?: Variant;
   children: ReactNode;
+  animated?: boolean;
 } & ButtonHTMLAttributes<HTMLButtonElement>) {
   return (
     <button className={cn(base, variants[variant], className)} {...props}>
+      {animated && <AnimatedBorder />}
       {children}
       <ArrowSlide />
     </button>

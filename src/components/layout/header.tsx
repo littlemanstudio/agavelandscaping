@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { NAV_LINKS, PHONE_TEL } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { MobileMenu } from "@/components/layout/mobile-menu";
+import { AnimatedBorder } from "@/components/ui/animated-border";
 
 export function Header() {
   const [stuck, setStuck] = useState(false);
@@ -52,6 +53,7 @@ export function Header() {
             : "border-white text-white hover:bg-white hover:text-grey"
         )}
       >
+        <AnimatedBorder />
         Llámanos
       </a>
 

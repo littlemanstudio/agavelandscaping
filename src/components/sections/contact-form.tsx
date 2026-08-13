@@ -96,7 +96,7 @@ export function ContactForm() {
           />
         </div>
 
-        <GhostButton type="submit" disabled={pending}>
+        <GhostButton type="submit" disabled={pending} animated>
           {pending ? "Enviando…" : "Enviar Solicitud"}
         </GhostButton>
 
