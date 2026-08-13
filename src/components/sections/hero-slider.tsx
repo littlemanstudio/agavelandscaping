@@ -1,0 +1,98 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import { motion } from "motion/react";
+import { GhostLink } from "@/components/ui/ghost-button";
+
+const slides = [
+  { src: "/img/photos/hero-night-yard.jpg", width: 1600, height: 1600 },
+  { src: "/img/photos/front-yard-daytime.jpg", width: 1440, height: 1440 },
+  { src: "/img/photos/patio-lounge-pergola.jpg", width: 1440, height: 1078 },
+];
+
+export function HeroSlider() {
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setActive((current) => (current + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(id);
+  }, []);
+
+  return (
+    <section className="relative flex h-[88svh] min-h-[560px] items-center justify-center overflow-hidden bg-ink">
+      <div className="absolute inset-0" aria-hidden="true">
+        {slides.map((slide, index) => (
+          <Image
+            key={slide.src}
+            src={slide.src}
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover transition-opacity duration-[1200ms] ease-in-out"
+            style={{ opacity: index === active ? 1 : 0 }}
+            loading={index === 0 ? "eager" : "lazy"}
+            fetchPriority={index === 0 ? "high" : undefined}
+          />
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/25 to-black/60" />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-[760px] px-6 text-center text-white">
+        <motion.svg
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 0.8 }}
+          className="mx-auto mb-6 size-10"
+          viewBox="0 0 40 40"
+          fill="none"
+          aria-hidden="true"
+        >
+          <g fill="#ffffff">
+            <path d="M20 20 L20 6 L23 20 Z" />
+            <path d="M20 20 L31 11 L22.5 21.5 Z" />
+            <path d="M20 20 L34 20 L21.5 22.5 Z" />
+            <path d="M20 20 L31 29 L21 22.5 Z" />
+            <path d="M20 20 L20 34 L18.5 21 Z" />
+            <path d="M20 20 L9 29 L18 21.5 Z" />
+            <path d="M20 20 L6 20 L18.5 18.5 Z" />
+            <path d="M20 20 L9 11 L19 18.5 Z" />
+          </g>
+          <circle cx="20" cy="20" r="3" fill="#9bad86" />
+        </motion.svg>
+
+        <motion.h1
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 0.8 }}
+          className="font-display text-[clamp(32px,5.5vw,56px)] font-medium uppercase tracking-[0.32em]"
+        >
+          AGAVE Landscaping PR
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+          className="mx-auto mt-5 max-w-[560px] text-lg"
+        >
+          Con más de 20 años de experiencia, nos especializamos en diseño y
+          desarrollo paisajista de jardines sostenibles y tropicales.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+          className="mt-8"
+        >
+          <GhostLink href="#intro" variant="light" arrowDirection="down">
+            Leer Más
+          </GhostLink>
+        </motion.div>
+      </div>
+    </section>
+  );
+}

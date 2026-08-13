@@ -1,0 +1,106 @@
+import type { Metadata } from "next";
+import { PageHero } from "@/components/sections/page-hero";
+import { MasonryGallery, type MasonryItem } from "@/components/sections/masonry-gallery";
+import { CtaBand } from "@/components/sections/cta-band";
+import { Reveal } from "@/components/motion/reveal";
+import { GhostLink } from "@/components/ui/ghost-button";
+import { SITE_URL, SOCIAL } from "@/lib/constants";
+import { businessJsonLd, breadcrumbJsonLd } from "@/lib/schema";
+
+export const metadata: Metadata = {
+  title: "Proyectos",
+  description:
+    "Galería de proyectos reales de AGAVE Landscaping en Ponce, Puerto Rico: patios, xerojardines, caminos e instalaciones residenciales y comerciales. Sin renders.",
+  alternates: { canonical: "/proyectos" },
+  openGraph: {
+    title: "Proyectos | AGAVE Landscaping",
+    description: "Proyectos reales de paisajismo residencial y comercial en Ponce, Puerto Rico, sin renders.",
+    url: `${SITE_URL}/proyectos`,
+    siteName: "AGAVE Landscaping",
+    type: "website",
+    images: [`${SITE_URL}/img/photos/og-cover.jpg`],
+  },
+};
+
+const gallery: MasonryItem[] = [
+  { src: "/img/photos/patio-senorial-sign.jpg", alt: "Patio Señorial en Ponce, cactus y agave junto a la entrada", caption: "Patio Señorial", orientation: "portrait", width: 1200, height: 1600 },
+  { src: "/img/photos/tropical-path-ferns.jpg", alt: "Camino tropical entre helechos, agave y piedra de río", caption: "Armonía Tropical", orientation: "portrait", width: 720, height: 1280 },
+  { src: "/img/photos/hero-night-yard.jpg", alt: "Instalación residencial con iluminación nocturna de patio", caption: "Iluminación Nocturna", orientation: "landscape", width: 1600, height: 1600 },
+  { src: "/img/photos/stepping-stone-path.jpg", alt: "Camino de losas entre grava dorada y cactus", caption: "Camino de Losas", orientation: "portrait", width: 1200, height: 1600 },
+  { src: "/img/photos/entrance-88-turf.jpg", alt: "Patio delantero con grama sintética y borde curvo de roca negra", caption: "Flujo Natural", orientation: "landscape", width: 1440, height: 1440 },
+  { src: "/img/photos/sti-commercial-cactus.jpg", alt: "Instalación comercial con jardín de cactus", caption: "Xerojardín Comercial", orientation: "portrait", width: 900, height: 1600 },
+  { src: "/img/photos/front-yard-daytime.jpg", alt: "Patio delantero de día con grava blanca", caption: "Patio de Día", orientation: "landscape", width: 1440, height: 1440 },
+  { src: "/img/photos/succulent-planter-bowl.jpg", alt: "Recipiente con suculentas, cactus y agave", caption: "Detalle de Suculentas", orientation: "portrait", width: 1440, height: 1440 },
+  { src: "/img/photos/macro-agave-snake-plant.jpg", alt: "Agave y sansevieria en un cantero de roca clara", caption: "Cantero de Agave", orientation: "portrait", width: 960, height: 960 },
+];
+
+export default function ProyectosPage() {
+  return (
+    <main id="main">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd(`${SITE_URL}/proyectos`)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Inicio", item: `${SITE_URL}/` },
+              { name: "Proyectos", item: `${SITE_URL}/proyectos` },
+            ])
+          ),
+        }}
+      />
+
+      <PageHero
+        eyebrow="Proyectos"
+        title="Trabajo Real, Sin Renders"
+        subtitle="Una selección de jardines que diseñamos y construimos en Puerto Rico."
+      />
+
+      <section className="py-[68px] max-md:py-[52px]">
+        <div className="mx-auto max-w-[760px] px-8 max-md:px-[22px]">
+          <Reveal direction="up">
+            <p className="text-[clamp(21px,2.2vw,27px)] leading-[1.45] text-ink">
+              Trabajo real, sin renders ni animaciones: cada foto es un jardín
+              que existe hoy en todo Puerto Rico.
+            </p>
+            <hr className="my-6 w-[75px] border-t-2 border-sage" />
+            <p className="text-grey">
+              Patios residenciales, xerojardines, instalaciones comerciales y
+              caminos de piedra, cada uno diseñado para su propio terreno. Si
+              algo de lo que ves aquí se parece a lo que imaginas, escríbenos.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="py-[92px] max-md:py-16">
+        <div className="mx-auto max-w-[1320px] px-8 max-md:px-[22px]">
+          <MasonryGallery items={gallery} />
+        </div>
+      </section>
+
+      <section className="bg-tan py-[68px] text-ink max-md:py-[52px]">
+        <div className="mx-auto max-w-[1320px] px-8 max-md:px-[22px]">
+          <Reveal direction="fade">
+            <p className="text-[clamp(21px,2.2vw,27px)] leading-[1.45]">
+              Publicamos jardines nuevos cada semana. Síguenos en Instagram
+              para verlos primero.
+            </p>
+            <hr className="my-6 w-[75px] border-t-2 border-sage" />
+            <GhostLink href={SOCIAL.instagram} target="_blank" rel="noopener noreferrer">
+              Síguenos
+            </GhostLink>
+          </Reveal>
+        </div>
+      </section>
+
+      <CtaBand
+        heading="¿Te gustó algo de lo que viste? Hablemos de tu jardín."
+        body="Escríbenos por WhatsApp con fotos de tu patio y una idea de lo que buscas, el estimado es gratis."
+      />
+    </main>
+  );
+}
