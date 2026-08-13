@@ -41,27 +41,21 @@ export function HeroSlider() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-[760px] px-6 text-center text-white">
-        <motion.svg
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.8 }}
-          className="mx-auto mb-6 size-10"
-          viewBox="0 0 40 40"
-          fill="none"
-          aria-hidden="true"
+          className="mx-auto mb-6"
         >
-          <g fill="#ffffff">
-            <path d="M20 20 L20 6 L23 20 Z" />
-            <path d="M20 20 L31 11 L22.5 21.5 Z" />
-            <path d="M20 20 L34 20 L21.5 22.5 Z" />
-            <path d="M20 20 L31 29 L21 22.5 Z" />
-            <path d="M20 20 L20 34 L18.5 21 Z" />
-            <path d="M20 20 L9 29 L18 21.5 Z" />
-            <path d="M20 20 L6 20 L18.5 18.5 Z" />
-            <path d="M20 20 L9 11 L19 18.5 Z" />
-          </g>
-          <circle cx="20" cy="20" r="3" fill="#9bad86" />
-        </motion.svg>
+          <Image
+            src="/img/logo/agave-mark.png"
+            alt=""
+            aria-hidden="true"
+            width={494}
+            height={378}
+            className="mx-auto h-10 w-auto"
+          />
+        </motion.div>
 
         <motion.h1
           initial={{ opacity: 0 }}
