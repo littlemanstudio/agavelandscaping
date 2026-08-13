@@ -103,16 +103,6 @@ export default function ContactoPage() {
         </div>
       </section>
 
-      <SkimmerGrid
-        eyebrow="Qué Esperar"
-        title="Del mensaje a la visita, así de simple."
-        items={[
-          { title: "Te Respondemos Rápido.", body: "Por WhatsApp o teléfono, normalmente en un par de horas." },
-          { title: "Visita y Diseño en Sitio.", body: "Medimos el área real y te presentamos el diseño antes de mover una piedra." },
-          { title: "Sin Presión de Venta.", body: "Te tomas tu tiempo, sin compromiso de continuar.", fullWidth: true },
-        ]}
-      />
-
       <section className="bg-tan py-[92px] max-md:py-16">
         <div className="mx-auto max-w-[1320px] px-8 max-md:px-[22px]">
           <div className="mx-auto mb-12 max-w-[640px] text-center">
@@ -129,6 +119,16 @@ export default function ContactoPage() {
           <ContactForm />
         </div>
       </section>
+
+      <SkimmerGrid
+        eyebrow="Qué Esperar"
+        title="Del mensaje a la visita, así de simple."
+        items={[
+          { title: "Te Respondemos Rápido.", body: "Por WhatsApp o teléfono, normalmente en un par de horas." },
+          { title: "Visita y Diseño en Sitio.", body: "Medimos el área real y te presentamos el diseño antes de mover una piedra." },
+          { title: "Sin Presión de Venta.", body: "Te tomas tu tiempo, sin compromiso de continuar.", fullWidth: true },
+        ]}
+      />
     </main>
   );
 }
