@@ -22,7 +22,3 @@ export function EditorialSplit({
     </section>
   );
 }
-
-export function ServiceBullet() {
-  return <span className="mr-3 inline-block size-[7px] -translate-y-0.5 rotate-45 bg-sage-deep" aria-hidden="true" />;
-}

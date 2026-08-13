@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/page-hero";
-import { EditorialSplit, ServiceBullet } from "@/components/sections/editorial-split";
+import { EditorialSplit } from "@/components/sections/editorial-split";
+import { ServiceAccordion } from "@/components/sections/service-accordion";
 import { CtaBand } from "@/components/sections/cta-band";
 import { GhostLink } from "@/components/ui/ghost-button";
 import { SITE_URL } from "@/lib/constants";
@@ -24,27 +25,27 @@ export const metadata: Metadata = {
 const services = [
   {
     title: "Jardín",
-    body: "Diseñamos tu jardín completo y lo construimos, de boceto a instalación. Es nuestro servicio insignia: medimos, diseñamos, presentamos y construimos.",
+    body: "Este es el que hacemos más. Te visitamos, medimos el terreno y diseñamos un jardín completo pensado para tu sol, tu suelo y cómo usas el espacio, no repetimos el mismo plano en cada casa. Roca volcánica, grava, grama y las plantas que aguantan el clima de Puerto Rico, todo instalado por el mismo equipo que lo diseñó.",
   },
   {
     title: "Grama Artificial",
-    body: "Instalación de grama sintética de alta densidad, verde todo el año, sin corte ni riego.",
+    body: "Grama sintética de alta densidad que se ve verde los doce meses del año, sin importar cuánto llueva o deje de llover. Preparamos bien la base antes de instalar, que es lo que realmente decide si una grama artificial dura diez años o se ve mal en dos. Ideal si estás cansado de cortar césped cada semana.",
   },
   {
     title: "Upgrade de Jardín",
-    body: "Renovamos jardines existentes: nueva grava, plantas, iluminación y estructura, sin empezar de cero.",
+    body: "No todo jardín necesita empezar de cero. Si ya tienes grama, plantas o piedra que sirven, trabajamos con eso: cambiamos lo que no funciona, sumamos grava nueva, iluminación o la estructura que le falta. Es la opción cuando el jardín no está mal, solo se quedó viejo.",
   },
   {
     title: "Mantenimiento Especializado de Jardín",
-    body: "Cuidado regular de plantas, grama y sistemas para que tu jardín se mantenga como el primer día.",
+    body: "Un jardín bien diseñado también necesita quien lo cuide. Nos encargamos de podar, fertilizar y revisar el riego y la iluminación con la frecuencia que tu jardín realmente necesita, no con un contrato genérico. La meta es que se vea como el día que lo entregamos.",
   },
   {
     title: "Sistema de Riego",
-    body: "Instalación de riego automático para que tu jardín reciba agua sin que tengas que pensarlo, incluso de viaje.",
+    body: "Riego automático diseñado por zonas, porque un agave y una grama no necesitan la misma agua ni la misma frecuencia. Una vez instalado, tu jardín se riega solo, temprano en la mañana o de noche, sin que tengas que acordarte. Y si te vas de viaje dos semanas, el jardín sigue su rutina sin ti.",
   },
   {
     title: "Sistema de Iluminación Solar/Eléctrico",
-    body: "Iluminación de patio solar o eléctrica que resalta tu jardín de noche y le suma seguridad a tu propiedad.",
+    body: "Un jardín bonito de día y apagado de noche solo se disfruta la mitad del tiempo. Instalamos luces solares o eléctricas colocadas para resaltar tus plantas y caminos, no para iluminar como estacionamiento. De paso, un patio bien iluminado se ve cuidado y disuade a quien no debería estar ahí.",
   },
 ];
 
@@ -78,20 +79,12 @@ export default function ServiciosPage() {
           <br />
           Cortar La Grama
         </h2>
-        <p className="text-ink">
+        <p className="mb-8 text-ink">
           Cada servicio se contrata por separado o combinado. No trabajamos
           con plantillas: cada estimado empieza con una visita, no con un
-          catálogo.
+          catálogo. Toca un servicio para ver de qué se trata.
         </p>
-        {services.map((service) => (
-          <div key={service.title}>
-            <h3 className="mt-8 font-display text-[21px] font-medium uppercase tracking-[0.06em] text-ink first:mt-0">
-              <ServiceBullet />
-              {service.title}
-            </h3>
-            <p className="mt-2 text-ink">{service.body}</p>
-          </div>
-        ))}
+        <ServiceAccordion items={services} />
         <div className="mt-9">
           <GhostLink href="/contacto">Pide tu Estimado Gratis</GhostLink>
         </div>
