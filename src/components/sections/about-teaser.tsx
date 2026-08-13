@@ -7,9 +7,9 @@ export function AboutTeaser() {
     <section id="intro" className="py-[92px] max-md:py-16">
       <div className="mx-auto grid max-w-[1320px] items-center gap-12 px-8 max-md:px-[22px] lg:grid-cols-[1fr_0.72fr]">
         <Reveal direction="left">
-          <p className="text-[clamp(21px,2.2vw,27px)] leading-[1.45] text-ink">
-            Cada proyecto va de principio a fin, del primer boceto a la última
-            piedra.
+          <p className="text-[clamp(24px,2.6vw,32px)] leading-[1.4] text-ink">
+            Nos especializamos en diseño y desarrollo paisajista de jardines
+            sostenibles y tropicales.
           </p>
           <hr className="my-6 w-[75px] border-t-2 border-sage" />
           <p className="text-grey">

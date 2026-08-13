@@ -3,10 +3,17 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { NAV_LINKS, PHONE_TEL } from "@/lib/constants";
+import { NAV_LINKS, PHONE_TEL, SOCIAL, WHATSAPP_URL } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { MobileMenu } from "@/components/layout/mobile-menu";
 import { AnimatedBorder } from "@/components/ui/animated-border";
+import { FacebookIcon, InstagramIcon, WhatsAppIcon } from "@/components/icons/social";
+
+const socialLinks = [
+  { label: "Instagram", href: SOCIAL.instagram, Icon: InstagramIcon },
+  { label: "Facebook", href: SOCIAL.facebook, Icon: FacebookIcon },
+  { label: "WhatsApp", href: WHATSAPP_URL, Icon: WhatsAppIcon },
+];
 
 export function Header() {
   const [stuck, setStuck] = useState(false);
@@ -28,6 +35,26 @@ export function Header() {
         stuck ? "bg-tan py-4" : "bg-transparent"
       )}
     >
+      <div
+        className={cn(
+          "absolute left-[50px] flex items-center gap-4 transition-colors max-lg:hidden",
+          stuck ? "text-ink" : "text-white"
+        )}
+      >
+        {socialLinks.map(({ label, href, Icon }) => (
+          <a
+            key={label}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={label}
+            className="opacity-90 transition-opacity hover:opacity-100"
+          >
+            <Icon className="size-[18px]" />
+          </a>
+        ))}
+      </div>
+
       <nav aria-label="Principal" className="flex gap-[34px] max-lg:hidden">
         {NAV_LINKS.map((link) => (
           <Link

@@ -66,24 +66,14 @@ export function HeroSlider() {
           AGAVE Landscaping PR
         </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-          className="mx-auto mt-5 max-w-[560px] text-lg"
-        >
-          Con más de 20 años de experiencia, nos especializamos en diseño y
-          desarrollo paisajista de jardines sostenibles y tropicales.
-        </motion.p>
-
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-          className="mt-8"
+          transition={{ delay: 0.6, duration: 0.8 }}
+          className="mt-9"
         >
-          <GhostLink href="#intro" variant="light" arrowDirection="down">
-            Leer Más
+          <GhostLink href="/contacto" variant="light" animated>
+            Solicita tu Consulta
           </GhostLink>
         </motion.div>
       </div>
