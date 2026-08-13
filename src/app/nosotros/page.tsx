@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/page-hero";
 import { SplitSection } from "@/components/sections/split-section";
 import { SkimmerGrid } from "@/components/sections/skimmer-grid";
+import { VideoBlock } from "@/components/sections/video-block";
+import { Reveal } from "@/components/motion/reveal";
 import { Testimonial } from "@/components/sections/testimonial";
 import { CtaBand } from "@/components/sections/cta-band";
 import { GhostLink } from "@/components/ui/ghost-button";
@@ -77,6 +79,31 @@ export default function NosotrosPage() {
           },
         ]}
       />
+
+      <section className="py-[92px] max-md:py-16">
+        <div className="mx-auto max-w-[1320px] px-8 max-md:px-[22px]">
+          <Reveal direction="up">
+            <p className="mb-3.5 text-[13px] font-bold uppercase tracking-[0.28em] text-sage-deep">
+              Detrás de Escena
+            </p>
+            <h2 className="max-w-[640px] font-display text-[clamp(24px,3vw,38px)] font-medium uppercase leading-[1.25] text-ink">
+              Así preparamos cada instalación.
+            </h2>
+          </Reveal>
+          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <VideoBlock
+              src="/videos/crew-loading-plants-1.mp4"
+              poster="/img/photos/crew-loading-plants-1-poster.jpg"
+              aspect="aspect-[9/16]"
+            />
+            <VideoBlock
+              src="/videos/crew-loading-plants-2.mp4"
+              poster="/img/photos/crew-loading-plants-2-poster.jpg"
+              aspect="aspect-[9/16]"
+            />
+          </div>
+        </div>
+      </section>
 
       <Testimonial />
 

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageHero } from "@/components/sections/page-hero";
 import { MasonryGallery, type MasonryItem } from "@/components/sections/masonry-gallery";
+import { VideoBlock } from "@/components/sections/video-block";
 import { CtaBand } from "@/components/sections/cta-band";
 import { Reveal } from "@/components/motion/reveal";
 import { GhostLink } from "@/components/ui/ghost-button";
@@ -32,6 +34,9 @@ const gallery: MasonryItem[] = [
   { src: "/img/photos/front-yard-daytime.jpg", alt: "Patio delantero de día con grava blanca", caption: "Patio de Día", orientation: "landscape", width: 1440, height: 1440 },
   { src: "/img/photos/succulent-planter-bowl.jpg", alt: "Recipiente con suculentas, cactus y agave", caption: "Detalle de Suculentas", orientation: "portrait", width: 1440, height: 1440 },
   { src: "/img/photos/macro-agave-snake-plant.jpg", alt: "Agave y sansevieria en un cantero de roca clara", caption: "Cantero de Agave", orientation: "portrait", width: 960, height: 960 },
+  { src: "/img/photos/tropical-garden-palms-1.jpg", alt: "Jardín tropical con palmas, oreja de elefante amarilla y piedra de río", caption: "Rincón Tropical", orientation: "portrait", width: 1152, height: 2048 },
+  { src: "/img/photos/agave-barrel-cactus-bowl.jpg", alt: "Agave y cactus barril dorado en recipiente de concreto", caption: "Composición en Concreto", orientation: "portrait", width: 1440, height: 1440 },
+  { src: "/img/photos/tan-gravel-garden-path.jpg", alt: "Camino de grava tan entre oreja de elefante amarilla y enebros", caption: "Sendero en Grava", orientation: "portrait", width: 900, height: 1600 },
 ];
 
 export default function ProyectosPage() {
@@ -73,6 +78,61 @@ export default function ProyectosPage() {
               algo de lo que ves aquí se parece a lo que imaginas, escríbenos.
             </p>
           </Reveal>
+        </div>
+      </section>
+
+      <section className="bg-ink py-[92px] text-white max-md:py-16">
+        <div className="mx-auto max-w-[1320px] px-8 max-md:px-[22px]">
+          <Reveal direction="fade">
+            <p className="mb-3.5 text-[13px] font-bold uppercase tracking-[0.28em] text-sage">
+              Proyecto Destacado
+            </p>
+            <h2 className="mb-4 font-display text-[clamp(28px,3.4vw,42px)] font-semibold uppercase leading-[1.1]">
+              Un Jardín, Dos Momentos
+            </h2>
+            <p className="max-w-[640px] text-white/75">
+              El mismo xerojardín, de día y de noche. Roca volcánica, cactus
+              barril y un sistema de iluminación diseñado para que tu jardín
+              se vea igual de bien después del atardecer.
+            </p>
+          </Reveal>
+
+          <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
+            <Reveal direction="left">
+              <figure className="relative aspect-[3/4] overflow-hidden">
+                <Image
+                  src="/img/photos/xerojardin-modern-day.jpg"
+                  alt="Xerojardín moderno de día, con cactus barril dorado y roca volcánica"
+                  fill
+                  sizes="(max-width: 768px) 92vw, 33vw"
+                  className="object-cover"
+                />
+                <figcaption className="absolute left-4 top-4 bg-white/90 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-ink">
+                  Día
+                </figcaption>
+              </figure>
+            </Reveal>
+            <Reveal direction="fade" delay={150}>
+              <figure className="relative aspect-[3/4] overflow-hidden">
+                <Image
+                  src="/img/photos/xerojardin-modern-night.jpg"
+                  alt="El mismo xerojardín de noche, iluminado con luces empotradas"
+                  fill
+                  sizes="(max-width: 768px) 92vw, 33vw"
+                  className="object-cover"
+                />
+                <figcaption className="absolute left-4 top-4 bg-ink/90 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-white">
+                  Noche
+                </figcaption>
+              </figure>
+            </Reveal>
+            <VideoBlock
+              src="/videos/xerojardin-walkthrough.mp4"
+              poster="/img/photos/xerojardin-walkthrough-poster.jpg"
+              caption="Recorrido en video"
+              aspect="aspect-[3/4]"
+            />
+          </div>
         </div>
       </section>
 
