@@ -5,9 +5,6 @@ export type MasonryItem = {
   src: string;
   alt: string;
   caption: string;
-  orientation: "portrait" | "landscape";
-  width: number;
-  height: number;
 };
 
 export function MasonryGallery({ items }: { items: MasonryItem[] }) {
@@ -15,12 +12,7 @@ export function MasonryGallery({ items }: { items: MasonryItem[] }) {
     <Reveal direction="up">
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((item) => (
-          <figure
-            key={item.src}
-            className={`group relative overflow-hidden ${
-              item.orientation === "portrait" ? "aspect-[4/5]" : "aspect-[4/3]"
-            }`}
-          >
+          <figure key={item.src} className="group relative aspect-[4/5] overflow-hidden">
             <Image
               src={item.src}
               alt={item.alt}

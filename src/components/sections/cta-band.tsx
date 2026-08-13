@@ -28,13 +28,14 @@ export function CtaBand({
     <section ref={ref} className="relative overflow-hidden py-24 max-md:py-16">
       <motion.div style={{ y }} className="absolute inset-x-0 -top-[18%] -bottom-[18%]" aria-hidden="true">
         <Image
-          src="/img/photos/sti-commercial-cactus.jpg"
+          src="/img/photos/agave-barrel-cactus-bowl.jpg"
           alt=""
           fill
           sizes="100vw"
           loading="lazy"
           className="object-cover"
         />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink/25 via-ink/10 to-ink/40" />
       </motion.div>
 
       <div className="relative mx-auto max-w-[1320px] px-8 max-md:px-[22px]">

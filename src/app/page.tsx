@@ -29,12 +29,12 @@ export const metadata: Metadata = {
 };
 
 const homeGallery: MasonryItem[] = [
-  { src: "/img/photos/patio-senorial-sign.jpg", alt: "Patio Señorial en Ponce, cactus y agave junto a la entrada", caption: "Patio Señorial", orientation: "portrait", width: 1200, height: 1600 },
-  { src: "/img/photos/tropical-path-ferns.jpg", alt: "Camino tropical entre helechos, agave y piedra de río", caption: "Armonía Tropical", orientation: "portrait", width: 720, height: 1280 },
-  { src: "/img/photos/hero-night-yard.jpg", alt: "Instalación residencial con iluminación nocturna de patio", caption: "Iluminación Nocturna", orientation: "landscape", width: 1600, height: 1600 },
-  { src: "/img/photos/stepping-stone-path.jpg", alt: "Camino de losas entre grava dorada y cactus", caption: "Camino de Losas", orientation: "portrait", width: 1200, height: 1600 },
-  { src: "/img/photos/entrance-88-turf.jpg", alt: "Patio delantero con grama sintética y borde curvo de roca negra", caption: "Flujo Natural", orientation: "landscape", width: 1440, height: 1440 },
-  { src: "/img/photos/sti-commercial-cactus.jpg", alt: "Instalación comercial con jardín de cactus", caption: "Xerojardín Comercial", orientation: "portrait", width: 900, height: 1600 },
+  { src: "/img/photos/patio-senorial-sign.jpg", alt: "Patio Señorial en Ponce, cactus y agave junto a la entrada", caption: "Patio Señorial" },
+  { src: "/img/photos/tropical-path-ferns.jpg", alt: "Camino tropical entre helechos, agave y piedra de río", caption: "Armonía Tropical" },
+  { src: "/img/photos/hero-night-yard.jpg", alt: "Instalación residencial con iluminación nocturna de patio", caption: "Iluminación Nocturna" },
+  { src: "/img/photos/stepping-stone-path.jpg", alt: "Camino de losas entre grava dorada y cactus", caption: "Camino de Losas" },
+  { src: "/img/photos/entrance-88-turf.jpg", alt: "Patio delantero con grama sintética y borde curvo de roca negra", caption: "Flujo Natural" },
+  { src: "/img/photos/sti-commercial-cactus.jpg", alt: "Instalación comercial con jardín de cactus", caption: "Xerojardín Comercial" },
 ];
 
 export default function HomePage() {
