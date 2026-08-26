@@ -25,6 +25,7 @@ export function SplitSection({
               alt={imageAlt}
               fill
               sizes="(max-width: 1024px) 90vw, 440px"
+              quality={88}
               className="object-cover"
             />
           </div>

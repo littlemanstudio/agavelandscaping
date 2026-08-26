@@ -30,6 +30,7 @@ export function AboutTeaser() {
               alt="Fundador de AGAVE Landscaping en un patio recién instalado con agaves y suculentas"
               fill
               sizes="(max-width: 1024px) 90vw, 440px"
+              quality={88}
               className="object-cover"
             />
           </div>

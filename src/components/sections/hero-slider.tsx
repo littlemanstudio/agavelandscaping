@@ -41,6 +41,7 @@ export function HeroSlider() {
               alt=""
               fill
               sizes="100vw"
+              quality={88}
               className="object-cover transition-opacity duration-[1200ms] ease-in-out"
               style={{ opacity: index === active ? 1 : 0 }}
               loading={index === 0 ? "eager" : "lazy"}

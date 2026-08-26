@@ -33,6 +33,7 @@ export function CtaBand({
           fill
           sizes="100vw"
           loading="lazy"
+          quality={88}
           className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-ink/25 via-ink/10 to-ink/40" />

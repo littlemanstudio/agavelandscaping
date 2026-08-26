@@ -47,6 +47,7 @@ export function InstagramGrid() {
                   alt={photo.alt}
                   fill
                   sizes="(max-width: 1024px) 46vw, 300px"
+                  quality={88}
                   loading="lazy"
                   className="object-cover transition-transform duration-500 hover:scale-[1.04]"
                 />

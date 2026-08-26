@@ -19,6 +19,7 @@ export function MasonryGallery({ items }: { items: MasonryItem[] }) {
               fill
               sizes="(max-width: 640px) 92vw, (max-width: 1024px) 48vw, 347px"
               loading="lazy"
+              quality={88}
               className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
             />
             <figcaption className="absolute inset-0 flex items-end bg-gradient-to-t from-black/65 via-black/10 to-transparent p-5 opacity-0 transition-opacity duration-350 group-hover:opacity-100 group-focus-within:opacity-100">

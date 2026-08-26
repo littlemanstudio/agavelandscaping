@@ -105,6 +105,7 @@ export default function ProyectosPage() {
                   alt="Xerojardín moderno de día, con cactus barril dorado y roca volcánica"
                   fill
                   sizes="(max-width: 768px) 92vw, 33vw"
+                  quality={88}
                   className="object-cover"
                 />
                 <figcaption className="absolute left-4 top-4 bg-white/90 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-ink">
@@ -119,6 +120,7 @@ export default function ProyectosPage() {
                   alt="El mismo xerojardín de noche, iluminado con luces empotradas"
                   fill
                   sizes="(max-width: 768px) 92vw, 33vw"
+                  quality={88}
                   className="object-cover"
                 />
                 <figcaption className="absolute left-4 top-4 bg-ink/90 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-white">
