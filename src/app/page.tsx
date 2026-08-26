@@ -56,7 +56,7 @@ export default function HomePage() {
               duraderos y de bajo mantenimiento.
             </p>
             <hr className="mx-auto my-6 w-[75px] border-t-2 border-white" />
-            <p className="mb-9">Una selección de nuestros proyectos reales, sin renders.</p>
+            <p className="mb-9">Una selección de nuestros proyectos reales.</p>
             <GhostLink href="/proyectos" variant="light">
               Ver Todos los Proyectos
             </GhostLink>

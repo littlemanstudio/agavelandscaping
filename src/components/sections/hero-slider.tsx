@@ -13,6 +13,7 @@ const slides = [
 
 export function HeroSlider() {
   const [active, setActive] = useState(0);
+  const [loaded, setLoaded] = useState<Set<number>>(() => new Set([0]));
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -21,22 +22,32 @@ export function HeroSlider() {
     return () => clearInterval(id);
   }, []);
 
+  useEffect(() => {
+    const nextIndex = (active + 1) % slides.length;
+    const id = setTimeout(() => {
+      setLoaded((prev) => (prev.has(nextIndex) ? prev : new Set(prev).add(nextIndex)));
+    }, 3000);
+    return () => clearTimeout(id);
+  }, [active]);
+
   return (
     <section className="relative flex h-[88svh] min-h-[560px] items-center justify-center overflow-hidden bg-ink">
       <div className="absolute inset-0" aria-hidden="true">
-        {slides.map((slide, index) => (
-          <Image
-            key={slide.src}
-            src={slide.src}
-            alt=""
-            fill
-            sizes="100vw"
-            className="object-cover transition-opacity duration-[1200ms] ease-in-out"
-            style={{ opacity: index === active ? 1 : 0 }}
-            loading={index === 0 ? "eager" : "lazy"}
-            fetchPriority={index === 0 ? "high" : undefined}
-          />
-        ))}
+        {slides.map((slide, index) =>
+          loaded.has(index) ? (
+            <Image
+              key={slide.src}
+              src={slide.src}
+              alt=""
+              fill
+              sizes="100vw"
+              className="object-cover transition-opacity duration-[1200ms] ease-in-out"
+              style={{ opacity: index === active ? 1 : 0 }}
+              loading={index === 0 ? "eager" : "lazy"}
+              fetchPriority={index === 0 ? "high" : undefined}
+            />
+          ) : null
+        )}
         <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/25 to-black/60" />
       </div>
 

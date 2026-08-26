@@ -12,11 +12,11 @@ import { businessJsonLd, breadcrumbJsonLd } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Proyectos",
   description:
-    "Galería de proyectos reales de AGAVE Landscaping en Ponce, Puerto Rico: patios, xerojardines, caminos e instalaciones residenciales y comerciales. Sin renders.",
+    "Galería de proyectos reales de AGAVE Landscaping en Ponce, Puerto Rico: patios, xerojardines, caminos e instalaciones residenciales y comerciales.",
   alternates: { canonical: "/proyectos" },
   openGraph: {
     title: "Proyectos | AGAVE Landscaping",
-    description: "Proyectos reales de paisajismo residencial y comercial en Ponce, Puerto Rico, sin renders.",
+    description: "Proyectos reales de paisajismo residencial y comercial en Ponce, Puerto Rico.",
     url: `${SITE_URL}/proyectos`,
     siteName: "AGAVE Landscaping",
     type: "website",
@@ -60,7 +60,7 @@ export default function ProyectosPage() {
 
       <PageHero
         eyebrow="Proyectos"
-        title="Trabajo Real, Sin Renders"
+        title="Trabajo Real"
         subtitle="Una selección de jardines que diseñamos y construimos en Puerto Rico."
       />
 
@@ -68,8 +68,8 @@ export default function ProyectosPage() {
         <div className="mx-auto max-w-[760px] px-8 max-md:px-[22px]">
           <Reveal direction="up">
             <p className="text-[clamp(21px,2.2vw,27px)] leading-[1.45] text-ink">
-              Trabajo real, sin renders ni animaciones: cada foto es un jardín
-              que existe hoy en todo Puerto Rico.
+              Trabajo real: cada foto es un jardín que existe hoy en todo
+              Puerto Rico.
             </p>
             <hr className="my-6 w-[75px] border-t-2 border-sage" />
             <p className="text-grey">
