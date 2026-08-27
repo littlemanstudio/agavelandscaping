@@ -73,7 +73,7 @@ export function HeroSlider() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.8 }}
-          className="font-display text-[clamp(32px,5.5vw,56px)] font-medium uppercase tracking-[0.32em]"
+          className="font-display text-[clamp(26px,7vw,56px)] font-medium uppercase tracking-[0.1em] sm:tracking-[0.32em]"
         >
           AGAVE Landscaping PR
         </motion.h1>
