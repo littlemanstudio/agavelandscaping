@@ -56,7 +56,7 @@ export function HeroSlider() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.8 }}
+          transition={{ delay: 0.1, duration: 0.5 }}
           className="mx-auto mb-6"
         >
           <Image
@@ -72,7 +72,7 @@ export function HeroSlider() {
         <motion.h1
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.8 }}
+          transition={{ delay: 0.25, duration: 0.5 }}
           className="font-display text-[clamp(26px,7vw,56px)] font-medium uppercase tracking-[0.1em] sm:tracking-[0.32em]"
         >
           AGAVE Landscaping PR
@@ -81,7 +81,7 @@ export function HeroSlider() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.6, duration: 0.8 }}
+          transition={{ delay: 0.45, duration: 0.5 }}
           className="mt-9"
         >
           <UnderlineLink href="/contacto" light>

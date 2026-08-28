@@ -13,7 +13,7 @@ import {
 import { NAV_LINKS, PHONE_DISPLAY, PHONE_TEL } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
-export function MobileMenu() {
+export function MobileMenu({ stuck = false }: { stuck?: boolean }) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
@@ -26,7 +26,7 @@ export function MobileMenu() {
         onClick={() => setOpen(true)}
         className="flex size-11 items-center justify-center lg:hidden"
       >
-        <Menu className="size-5 text-white" strokeWidth={2} />
+        <Menu className={cn("size-5 transition-colors", stuck ? "text-ink" : "text-white")} strokeWidth={2} />
       </button>
       <SheetContent side="right" className="bg-tan px-6 py-8 sm:max-w-xs">
         <SheetHeader className="p-0">

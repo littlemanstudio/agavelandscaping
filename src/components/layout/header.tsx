@@ -37,7 +37,7 @@ export function Header() {
     >
       <div
         className={cn(
-          "absolute left-[50px] flex items-center gap-4 transition-colors max-lg:hidden",
+          "absolute left-[30px] flex items-center gap-4 transition-colors lg:left-[50px]",
           stuck ? "text-ink" : "text-white"
         )}
       >
@@ -84,7 +84,7 @@ export function Header() {
         Llámanos
       </a>
 
-      <MobileMenu />
+      <MobileMenu stuck={stuck} />
     </header>
   );
 }
