@@ -81,10 +81,10 @@ export default function HomePage() {
           Cortar La Grama
         </h2>
         <p className="text-ink">
-          Seis servicios: diseño de jardines, grama artificial, upgrades de
-          jardín, mantenimiento especializado, sistema de riego y sistema de
-          iluminación solar/eléctrico. Medimos, diseñamos, presentamos y
-          construimos.
+          No solo cortamos grama. Diseñamos jardines completos, renovamos los
+          que ya tienes, instalamos grama artificial, riego e iluminación, y
+          seguimos dándole mantenimiento después de terminar. Medimos,
+          diseñamos y te mostramos el resultado antes de tocar una piedra.
         </p>
         <div className="mt-8">
           <GhostLink href="/servicios">Ver Todos los Servicios</GhostLink>

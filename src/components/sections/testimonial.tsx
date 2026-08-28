@@ -10,10 +10,10 @@ export function Testimonial() {
           </p>
           <hr className="mx-auto my-6 w-[75px] border-t-2 border-sage" />
           <blockquote className="text-[clamp(19px,2vw,23px)] leading-[1.5] text-ink">
-            &laquo;Desde el primer día que los contacté, me hablaron con
+            &quot;Desde el primer día que los contacté, me hablaron con
             claridad y honestidad. Vinieron a la casa, midieron, me enseñaron
             su diseño y me explicaron qué iban a hacer, cómo lo hacían y por
-            qué, con conocimiento y experiencia.&raquo;
+            qué, con conocimiento y experiencia.&quot;
           </blockquote>
           <p className="mt-6 text-sm">
             <strong>Rafael Caballero</strong> &middot; Reseña de Facebook, noviembre 2021
