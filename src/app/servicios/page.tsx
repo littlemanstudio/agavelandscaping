@@ -75,9 +75,9 @@ export default function ServiciosPage() {
           De Boceto a Instalación
         </p>
         <h2 className="mb-11 font-display text-[clamp(40px,5.2vw,72px)] font-semibold uppercase leading-[1.04] text-ink">
-          Más Allá De
+          No Es Un Esquema.
           <br />
-          Cortar La Grama
+          Es Arte.
         </h2>
         <p className="mb-8 text-ink">
           Cada servicio se contrata por separado o combinado. No trabajamos

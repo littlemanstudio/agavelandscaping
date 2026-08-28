@@ -76,15 +76,15 @@ export default function HomePage() {
           Nuestros Servicios
         </p>
         <h2 className="mb-11 font-display text-[clamp(40px,5.2vw,72px)] font-semibold uppercase leading-[1.04] text-ink">
-          Más Allá De
+          No Es Un Esquema.
           <br />
-          Cortar La Grama
+          Es Arte.
         </h2>
         <p className="text-ink">
           No solo cortamos grama. Diseñamos jardines completos, renovamos los
-          que ya tienes, instalamos grama artificial, riego e iluminación, y
-          seguimos dándole mantenimiento después de terminar. Medimos,
-          diseñamos y te mostramos el resultado antes de tocar una piedra.
+          que ya tienes e instalamos grama artificial, riego e iluminación.
+          Medimos, diseñamos y te mostramos el resultado antes de tocar una
+          piedra.
         </p>
         <div className="mt-8">
           <GhostLink href="/servicios">Ver Todos los Servicios</GhostLink>
