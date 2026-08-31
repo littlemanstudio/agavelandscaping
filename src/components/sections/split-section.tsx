@@ -19,7 +19,7 @@ export function SplitSection({
         <Reveal direction="left">{children}</Reveal>
 
         <Reveal direction="right" delay={300}>
-          <div className="relative aspect-square overflow-hidden">
+          <div className="relative aspect-square overflow-hidden bg-tan/40">
             <Image
               src={image}
               alt={imageAlt}

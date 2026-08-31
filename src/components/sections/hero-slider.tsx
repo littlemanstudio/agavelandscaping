@@ -65,6 +65,7 @@ export function HeroSlider() {
             aria-hidden="true"
             width={494}
             height={378}
+            priority
             className="mx-auto h-10 w-auto"
           />
         </motion.div>

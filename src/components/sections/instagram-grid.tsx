@@ -40,7 +40,7 @@ export function InstagramGrid() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Ver en Instagram"
-                className="relative block aspect-square overflow-hidden"
+                className="relative block aspect-square overflow-hidden bg-tan/40"
               >
                 <Image
                   src={photo.src}

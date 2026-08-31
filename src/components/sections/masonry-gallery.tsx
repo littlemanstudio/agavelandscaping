@@ -12,7 +12,7 @@ export function MasonryGallery({ items }: { items: MasonryItem[] }) {
     <Reveal direction="up">
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((item) => (
-          <figure key={item.src} className="group relative aspect-[4/5] overflow-hidden">
+          <figure key={item.src} className="group relative aspect-[4/5] overflow-hidden bg-tan/40">
             <Image
               src={item.src}
               alt={item.alt}

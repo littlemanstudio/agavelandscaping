@@ -24,7 +24,7 @@ export function AboutTeaser() {
         </Reveal>
 
         <Reveal direction="right" delay={300}>
-          <div className="relative aspect-square overflow-hidden">
+          <div className="relative aspect-square overflow-hidden bg-tan/40">
             <Image
               src="/img/photos/founder-portrait.jpg"
               alt="Fundador de AGAVE Landscaping PR en un patio recién instalado con agaves y suculentas"

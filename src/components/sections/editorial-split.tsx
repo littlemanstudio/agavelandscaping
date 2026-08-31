@@ -13,7 +13,7 @@ export function EditorialSplit({
 }) {
   return (
     <section className="grid items-stretch lg:grid-cols-2">
-      <div className="relative min-h-[44vh]">
+      <div className="relative min-h-[44vh] bg-tan/40">
         <Image
           src={image}
           alt={imageAlt}

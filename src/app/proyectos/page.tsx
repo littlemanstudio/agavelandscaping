@@ -99,7 +99,7 @@ export default function ProyectosPage() {
 
           <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
             <Reveal direction="left">
-              <figure className="relative aspect-[3/4] overflow-hidden">
+              <figure className="relative aspect-[3/4] overflow-hidden bg-white/10">
                 <Image
                   src="/img/photos/xerojardin-modern-day.jpg"
                   alt="Xerojardín moderno de día, con cactus barril dorado y roca volcánica"
@@ -114,7 +114,7 @@ export default function ProyectosPage() {
               </figure>
             </Reveal>
             <Reveal direction="fade" delay={150}>
-              <figure className="relative aspect-[3/4] overflow-hidden">
+              <figure className="relative aspect-[3/4] overflow-hidden bg-white/10">
                 <Image
                   src="/img/photos/xerojardin-modern-night.jpg"
                   alt="El mismo xerojardín de noche, iluminado con luces empotradas"
