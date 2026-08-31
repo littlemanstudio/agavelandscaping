@@ -4,7 +4,7 @@ export function businessJsonLd(pageUrl: string) {
   return {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
-    name: "AGAVE Landscaping",
+    name: "AGAVE Landscaping PR",
     image: `${SITE_URL}/img/photos/og-cover.jpg`,
     url: pageUrl,
     telephone: PHONE_E164_DASHED,

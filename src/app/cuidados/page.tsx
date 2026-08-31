@@ -10,13 +10,13 @@ import { businessJsonLd, breadcrumbJsonLd } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Cuidado y Mantenimiento de Jardines",
   description:
-    "Cómo pensamos el mantenimiento de tu jardín en AGAVE Landscaping: diseño de bajo mantenimiento, riego inteligente y estimados gratis en Ponce, PR. Escríbenos.",
+    "Cómo pensamos el mantenimiento de tu jardín en AGAVE Landscaping PR: diseño de bajo mantenimiento, riego inteligente y estimados gratis en Ponce, PR. Escríbenos.",
   alternates: { canonical: "/cuidados" },
   openGraph: {
-    title: "Cuidados | AGAVE Landscaping",
+    title: "Cuidados | AGAVE Landscaping PR",
     description: "Diseño de bajo mantenimiento y riego inteligente para jardines en el clima de Ponce, Puerto Rico.",
     url: `${SITE_URL}/cuidados`,
-    siteName: "AGAVE Landscaping",
+    siteName: "AGAVE Landscaping PR",
     type: "website",
     images: [`${SITE_URL}/img/photos/og-cover.jpg`],
   },

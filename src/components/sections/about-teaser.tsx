@@ -27,7 +27,7 @@ export function AboutTeaser() {
           <div className="relative aspect-square overflow-hidden">
             <Image
               src="/img/photos/founder-portrait.jpg"
-              alt="Fundador de AGAVE Landscaping en un patio recién instalado con agaves y suculentas"
+              alt="Fundador de AGAVE Landscaping PR en un patio recién instalado con agaves y suculentas"
               fill
               sizes="(max-width: 1024px) 90vw, 440px"
               quality={88}

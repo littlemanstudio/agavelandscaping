@@ -13,16 +13,16 @@ import { businessJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "AGAVE Landscaping | Diseño y Paisajismo en Ponce, PR",
+    absolute: "AGAVE Landscaping PR | Diseño y Paisajismo en Ponce, PR",
   },
   description:
-    "AGAVE Landscaping: más de 20 años diseñando y construyendo jardines sostenibles y tropicales en Ponce, PR. Estimados gratis por WhatsApp, sin compromiso.",
+    "AGAVE Landscaping PR: más de 20 años diseñando y construyendo jardines sostenibles y tropicales en Ponce, PR. Estimados gratis por WhatsApp, sin compromiso.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "AGAVE Landscaping | Diseño y Paisajismo en Ponce, Puerto Rico",
+    title: "AGAVE Landscaping PR | Diseño y Paisajismo en Ponce, Puerto Rico",
     description: "Diseño de jardines en Ponce, PR, con más de 20 años de experiencia.",
     url: SITE_URL,
-    siteName: "AGAVE Landscaping",
+    siteName: "AGAVE Landscaping PR",
     type: "website",
     images: [`${SITE_URL}/img/photos/og-cover.jpg`],
   },

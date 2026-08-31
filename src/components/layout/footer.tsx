@@ -16,7 +16,7 @@ export function Footer() {
         <div>
           <Link
             href="/"
-            aria-label="AGAVE Landscaping, inicio"
+            aria-label="AGAVE Landscaping PR, inicio"
             className="inline-flex items-center gap-3.5"
           >
             <Image
@@ -29,7 +29,7 @@ export function Footer() {
             <span className="flex flex-col font-display text-[26px] font-medium uppercase leading-[1.1] tracking-[0.05em]">
               AGAVE
               <em className="font-body text-[10px] font-bold not-italic tracking-[0.3em] opacity-75">
-                Landscaping &middot; Diseño de Jardines
+                Landscaping PR &middot; Diseño de Jardines
               </em>
             </span>
           </Link>
@@ -71,7 +71,7 @@ export function Footer() {
 
       <div className="mx-auto flex max-w-[1320px] flex-wrap justify-between gap-x-6 gap-y-2.5 border-t border-ink/[0.18] px-8 py-6 text-[13px] tracking-[0.04em] opacity-85 max-md:px-[22px]">
         <span>
-          &copy; {new Date().getFullYear()} AGAVE Landscaping. Todos los derechos reservados.
+          &copy; {new Date().getFullYear()} AGAVE Landscaping PR. Todos los derechos reservados.
         </span>
         <span>
           <Link href="/terminos" className="hover:text-sage-deep">

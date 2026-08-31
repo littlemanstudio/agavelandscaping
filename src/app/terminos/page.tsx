@@ -7,13 +7,13 @@ import { businessJsonLd, breadcrumbJsonLd } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Términos y Condiciones de Servicio",
   description:
-    "Conoce los términos y condiciones de AGAVE Landscaping: servicios de diseño y paisajismo, estimados gratis y cobertura en toda Puerto Rico.",
+    "Conoce los términos y condiciones de AGAVE Landscaping PR: servicios de diseño y paisajismo, estimados gratis y cobertura en toda Puerto Rico.",
   alternates: { canonical: "/terminos" },
   robots: { index: false, follow: true },
   openGraph: {
-    title: "Términos y Condiciones de Servicio | AGAVE Landscaping",
+    title: "Términos y Condiciones de Servicio | AGAVE Landscaping PR",
     url: `${SITE_URL}/terminos`,
-    siteName: "AGAVE Landscaping",
+    siteName: "AGAVE Landscaping PR",
     type: "website",
     images: [`${SITE_URL}/img/photos/og-cover.jpg`],
   },
@@ -41,7 +41,7 @@ export default function TerminosPage() {
       <PageHero eyebrow="Legal" title="Términos y Condiciones" subtitle="Última actualización: agosto de 2026." />
 
       <LegalProse>
-        <p>Al usar este sitio o solicitar un estimado con AGAVE Landscaping aceptas estos términos.</p>
+        <p>Al usar este sitio o solicitar un estimado con AGAVE Landscaping PR aceptas estos términos.</p>
 
         <h2>Servicios</h2>
         <p>
@@ -68,7 +68,7 @@ export default function TerminosPage() {
         </p>
 
         <h2>Contenido del sitio</h2>
-        <p>Fotos, textos y diseño de este sitio pertenecen a AGAVE Landscaping. No se pueden reproducir sin permiso.</p>
+        <p>Fotos, textos y diseño de este sitio pertenecen a AGAVE Landscaping PR. No se pueden reproducir sin permiso.</p>
 
         <h2>Cambios</h2>
         <p>Podemos actualizar estos términos en cualquier momento. La fecha de la última actualización aparece arriba.</p>

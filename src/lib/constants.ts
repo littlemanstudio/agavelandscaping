@@ -1,5 +1,5 @@
 export const SITE_URL = "https://agavelandscapingpr.com";
-export const SITE_NAME = "AGAVE Landscaping";
+export const SITE_NAME = "AGAVE Landscaping PR";
 
 export const PHONE_DISPLAY = "(939) 639-2292";
 export const PHONE_TEL = "+19396392292";

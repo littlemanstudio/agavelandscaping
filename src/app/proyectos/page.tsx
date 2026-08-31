@@ -12,13 +12,13 @@ import { businessJsonLd, breadcrumbJsonLd } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Proyectos",
   description:
-    "Galería de proyectos reales de AGAVE Landscaping en Ponce, Puerto Rico: patios, xerojardines, caminos e instalaciones residenciales y comerciales.",
+    "Galería de proyectos reales de AGAVE Landscaping PR en Ponce, Puerto Rico: patios, xerojardines, caminos e instalaciones residenciales y comerciales.",
   alternates: { canonical: "/proyectos" },
   openGraph: {
-    title: "Proyectos | AGAVE Landscaping",
+    title: "Proyectos | AGAVE Landscaping PR",
     description: "Proyectos reales de paisajismo residencial y comercial en Ponce, Puerto Rico.",
     url: `${SITE_URL}/proyectos`,
-    siteName: "AGAVE Landscaping",
+    siteName: "AGAVE Landscaping PR",
     type: "website",
     images: [`${SITE_URL}/img/photos/og-cover.jpg`],
   },

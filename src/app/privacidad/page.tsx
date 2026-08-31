@@ -7,13 +7,13 @@ import { businessJsonLd, breadcrumbJsonLd } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Política de Privacidad y Protección de Datos",
   description:
-    "Cómo AGAVE Landscaping recopila, usa y protege tu información al solicitar un estimado de diseño de jardines en toda Puerto Rico.",
+    "Cómo AGAVE Landscaping PR recopila, usa y protege tu información al solicitar un estimado de diseño de jardines en toda Puerto Rico.",
   alternates: { canonical: "/privacidad" },
   robots: { index: false, follow: true },
   openGraph: {
-    title: "Política de Privacidad y Protección de Datos | AGAVE",
+    title: "Política de Privacidad y Protección de Datos | AGAVE Landscaping PR",
     url: `${SITE_URL}/privacidad`,
-    siteName: "AGAVE Landscaping",
+    siteName: "AGAVE Landscaping PR",
     type: "website",
     images: [`${SITE_URL}/img/photos/og-cover.jpg`],
   },
@@ -42,7 +42,7 @@ export default function PrivacidadPage() {
 
       <LegalProse>
         <p>
-          En AGAVE Landscaping respetamos tu privacidad. Esta página explica
+          En AGAVE Landscaping PR respetamos tu privacidad. Esta página explica
           qué información recopilamos y cómo la usamos.
         </p>
 

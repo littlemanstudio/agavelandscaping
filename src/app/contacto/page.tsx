@@ -14,10 +14,10 @@ export const metadata: Metadata = {
     "Escríbenos por WhatsApp o llámanos al (939) 639-2292 para un estimado gratis de paisajismo en Ponce, Puerto Rico. Vamos, medimos y presentamos el diseño.",
   alternates: { canonical: "/contacto" },
   openGraph: {
-    title: "Contacto | AGAVE Landscaping",
+    title: "Contacto | AGAVE Landscaping PR",
     description: "Estimados gratis por WhatsApp. Diseño y construcción de jardines en Ponce, Puerto Rico.",
     url: `${SITE_URL}/contacto`,
-    siteName: "AGAVE Landscaping",
+    siteName: "AGAVE Landscaping PR",
     type: "website",
     images: [`${SITE_URL}/img/photos/og-cover.jpg`],
   },

@@ -50,7 +50,7 @@ export async function submitContactForm(
   try {
     const resend = new Resend(apiKey);
     await resend.emails.send({
-      from: "AGAVE Landscaping <onboarding@resend.dev>",
+      from: "AGAVE Landscaping PR <onboarding@resend.dev>",
       to: EMAIL,
       replyTo: email,
       subject: `Nueva solicitud de estimado: ${nombre}`,
