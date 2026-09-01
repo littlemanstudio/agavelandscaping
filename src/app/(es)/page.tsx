@@ -17,7 +17,10 @@ export const metadata: Metadata = {
   },
   description:
     "AGAVE Landscaping PR: más de 20 años diseñando y construyendo jardines sostenibles y tropicales en Ponce, PR. Estimados gratis por WhatsApp, sin compromiso.",
-  alternates: { canonical: "/" },
+  alternates: {
+    canonical: "/",
+    languages: { "es-PR": SITE_URL, en: `${SITE_URL}/en` },
+  },
   openGraph: {
     title: "AGAVE Landscaping PR | Diseño y Paisajismo en Ponce, Puerto Rico",
     description: "Diseño de jardines en Ponce, PR, con más de 20 años de experiencia.",

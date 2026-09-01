@@ -10,10 +10,28 @@ export type ContactFormState = {
   fieldErrors?: Record<string, string[]>;
 };
 
+const messages = {
+  es: {
+    invalid: "Revisa los campos marcados e inténtalo de nuevo.",
+    unavailable:
+      "No pudimos enviar tu solicitud en este momento. Escríbenos directo por WhatsApp mientras lo resolvemos.",
+    success: "Recibimos tu solicitud. Te contactamos pronto.",
+  },
+  en: {
+    invalid: "Please check the highlighted fields and try again.",
+    unavailable:
+      "We couldn't send your request right now. Message us directly on WhatsApp while we sort it out.",
+    success: "We received your request. We'll be in touch soon.",
+  },
+} as const;
+
 export async function submitContactForm(
   _prevState: ContactFormState,
   formData: FormData
 ): Promise<ContactFormState> {
+  const locale = formData.get("locale") === "en" ? "en" : "es";
+  const t = messages[locale];
+
   const raw = {
     nombre: formData.get("nombre"),
     telefono: formData.get("telefono"),
@@ -29,7 +47,7 @@ export async function submitContactForm(
   if (!parsed.success) {
     return {
       status: "error",
-      message: "Revisa los campos marcados e inténtalo de nuevo.",
+      message: t.invalid,
       fieldErrors: parsed.error.flatten().fieldErrors,
     };
   }
@@ -42,8 +60,7 @@ export async function submitContactForm(
     console.error("RESEND_API_KEY is not set. Contact form submission was not sent.");
     return {
       status: "error",
-      message:
-        "No pudimos enviar tu solicitud en este momento. Escríbenos directo por WhatsApp mientras lo resolvemos.",
+      message: t.unavailable,
     };
   }
 
@@ -55,6 +72,7 @@ export async function submitContactForm(
       replyTo: email,
       subject: `Nueva solicitud de estimado: ${nombre}`,
       text: [
+        `Idioma del visitante: ${locale === "en" ? "Inglés" : "Español"}`,
         `Nombre: ${nombre}`,
         `Teléfono: ${telefono}`,
         `Email: ${email}`,
@@ -67,14 +85,13 @@ export async function submitContactForm(
 
     return {
       status: "success",
-      message: "Recibimos tu solicitud. Te contactamos pronto.",
+      message: t.success,
     };
   } catch (error) {
     console.error("Failed to send contact form email:", error);
     return {
       status: "error",
-      message:
-        "No pudimos enviar tu solicitud en este momento. Escríbenos directo por WhatsApp mientras lo resolvemos.",
+      message: t.unavailable,
     };
   }
 }

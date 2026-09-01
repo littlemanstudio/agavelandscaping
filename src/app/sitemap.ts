@@ -11,8 +11,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/contacto", priority: 0.7 },
   ];
 
-  return routes.map(({ path, priority }) => ({
-    url: `${SITE_URL}${path}`,
-    priority,
-  }));
+  const entries: MetadataRoute.Sitemap = [];
+
+  for (const { path, priority } of routes) {
+    const esUrl = `${SITE_URL}${path}`;
+    const enUrl = `${SITE_URL}/en${path}`;
+
+    entries.push({
+      url: esUrl,
+      priority,
+      alternates: { languages: { "es-PR": esUrl, en: enUrl } },
+    });
+    entries.push({
+      url: enUrl,
+      priority,
+      alternates: { languages: { "es-PR": esUrl, en: enUrl } },
+    });
+  }
+
+  return entries;
 }

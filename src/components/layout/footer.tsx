@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { EMAIL, PHONE_DISPLAY, PHONE_TEL, SOCIAL, WHATSAPP_URL } from "@/lib/constants";
+import { type Locale } from "@/lib/i18n";
 import { FacebookIcon, InstagramIcon, WhatsAppIcon } from "@/components/icons/social";
 
 const socialLinks = [
@@ -9,14 +10,45 @@ const socialLinks = [
   { label: "WhatsApp", href: WHATSAPP_URL, Icon: WhatsAppIcon },
 ];
 
-export function Footer() {
+const copy = {
+  es: {
+    homeLabel: "AGAVE Landscaping PR, inicio",
+    tagline: "Landscaping PR · Diseño de Jardines",
+    visit: "Visítanos",
+    follow: "Síguenos",
+    rights: "Todos los derechos reservados.",
+    terms: "Términos y Condiciones",
+    privacy: "Política de Privacidad",
+    credit: "Sitio por Littleman Labs",
+    home: "/",
+    terminosHref: "/terminos",
+    privacidadHref: "/privacidad",
+  },
+  en: {
+    homeLabel: "AGAVE Landscaping PR, home",
+    tagline: "Landscaping PR · Garden Design",
+    visit: "Visit Us",
+    follow: "Follow Us",
+    rights: "All rights reserved.",
+    terms: "Terms & Conditions",
+    privacy: "Privacy Policy",
+    credit: "Site by Littleman Labs",
+    home: "/en",
+    terminosHref: "/en/terminos",
+    privacidadHref: "/en/privacidad",
+  },
+} as const;
+
+export function Footer({ locale = "es" }: { locale?: Locale }) {
+  const t = copy[locale];
+
   return (
     <footer className="bg-tan text-ink">
       <div className="mx-auto grid max-w-[1320px] gap-8 px-8 py-14 max-md:px-[22px] md:grid-cols-[2fr_1fr_1fr]">
         <div>
           <Link
-            href="/"
-            aria-label="AGAVE Landscaping PR, inicio"
+            href={t.home}
+            aria-label={t.homeLabel}
             className="inline-flex items-center gap-3.5"
           >
             <Image
@@ -29,14 +61,14 @@ export function Footer() {
             <span className="flex flex-col font-display text-[26px] font-medium uppercase leading-[1.1] tracking-[0.05em]">
               AGAVE
               <em className="font-body text-[10px] font-bold not-italic tracking-[0.3em] opacity-75">
-                Landscaping PR &middot; Diseño de Jardines
+                {t.tagline}
               </em>
             </span>
           </Link>
         </div>
 
         <div>
-          <p className="mb-3.5 text-xs font-bold uppercase tracking-[0.28em]">Visítanos</p>
+          <p className="mb-3.5 text-xs font-bold uppercase tracking-[0.28em]">{t.visit}</p>
           <p className="leading-[2]">
             Ponce, Puerto Rico
             <br />
@@ -51,7 +83,7 @@ export function Footer() {
         </div>
 
         <div>
-          <p className="mb-3.5 text-xs font-bold uppercase tracking-[0.28em]">Síguenos</p>
+          <p className="mb-3.5 text-xs font-bold uppercase tracking-[0.28em]">{t.follow}</p>
           <div className="mt-1 flex gap-[18px]">
             {socialLinks.map(({ label, href, Icon }) => (
               <a
@@ -71,18 +103,18 @@ export function Footer() {
 
       <div className="mx-auto flex max-w-[1320px] flex-wrap justify-between gap-x-6 gap-y-2.5 border-t border-ink/[0.18] px-8 py-6 text-[13px] tracking-[0.04em] opacity-85 max-md:px-[22px]">
         <span>
-          &copy; {new Date().getFullYear()} AGAVE Landscaping PR. Todos los derechos reservados.
+          &copy; {new Date().getFullYear()} AGAVE Landscaping PR. {t.rights}
         </span>
         <span>
-          <Link href="/terminos" className="hover:text-sage-deep">
-            Términos y Condiciones
+          <Link href={t.terminosHref} className="hover:text-sage-deep">
+            {t.terms}
           </Link>{" "}
           &middot;{" "}
-          <Link href="/privacidad" className="hover:text-sage-deep">
-            Política de Privacidad
+          <Link href={t.privacidadHref} className="hover:text-sage-deep">
+            {t.privacy}
           </Link>
         </span>
-        <span>Sitio por Littleman Labs</span>
+        <span>{t.credit}</span>
       </div>
     </footer>
   );

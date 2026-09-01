@@ -13,7 +13,10 @@ export const metadata: Metadata = {
   title: "Proyectos",
   description:
     "Galería de proyectos reales de AGAVE Landscaping PR en Ponce, Puerto Rico: patios, xerojardines, caminos e instalaciones residenciales y comerciales.",
-  alternates: { canonical: "/proyectos" },
+  alternates: {
+    canonical: "/proyectos",
+    languages: { "es-PR": `${SITE_URL}/proyectos`, en: `${SITE_URL}/en/proyectos` },
+  },
   openGraph: {
     title: "Proyectos | AGAVE Landscaping PR",
     description: "Proyectos reales de paisajismo residencial y comercial en Ponce, Puerto Rico.",

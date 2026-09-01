@@ -11,7 +11,10 @@ export const metadata: Metadata = {
   title: "Cuidado y Mantenimiento de Jardines",
   description:
     "Cómo pensamos el mantenimiento de tu jardín en AGAVE Landscaping PR: diseño de bajo mantenimiento, riego inteligente y estimados gratis en Ponce, PR. Escríbenos.",
-  alternates: { canonical: "/cuidados" },
+  alternates: {
+    canonical: "/cuidados",
+    languages: { "es-PR": `${SITE_URL}/cuidados`, en: `${SITE_URL}/en/cuidados` },
+  },
   openGraph: {
     title: "Cuidados | AGAVE Landscaping PR",
     description: "Diseño de bajo mantenimiento y riego inteligente para jardines en el clima de Ponce, Puerto Rico.",

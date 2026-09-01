@@ -18,15 +18,6 @@ export const SOCIAL = {
   instagram: "https://www.instagram.com/agave.landscaping.pr/",
 } as const;
 
-export const NAV_LINKS = [
-  { title: "Inicio", href: "/" },
-  { title: "Nosotros", href: "/nosotros" },
-  { title: "Servicios", href: "/servicios" },
-  { title: "Proyectos", href: "/proyectos" },
-  { title: "Cuidados", href: "/cuidados" },
-  { title: "Contacto", href: "/contacto" },
-] as const;
-
 export const SERVICE_OPTIONS = [
   "Jardín",
   "Grama Artificial",

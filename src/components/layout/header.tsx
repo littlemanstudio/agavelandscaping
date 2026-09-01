@@ -3,9 +3,11 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { NAV_LINKS, PHONE_TEL, SOCIAL, WHATSAPP_URL } from "@/lib/constants";
+import { PHONE_TEL, SOCIAL, WHATSAPP_URL } from "@/lib/constants";
+import { type Locale, getNavLinks } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { MobileMenu } from "@/components/layout/mobile-menu";
+import { LanguageToggle } from "@/components/layout/language-toggle";
 import { AnimatedBorder } from "@/components/ui/animated-border";
 import { FacebookIcon, InstagramIcon, WhatsAppIcon } from "@/components/icons/social";
 
@@ -15,9 +17,12 @@ const socialLinks = [
   { label: "WhatsApp", href: WHATSAPP_URL, Icon: WhatsAppIcon },
 ];
 
-export function Header() {
+const callLabel = { es: "Llámanos", en: "Call Us" } as const;
+
+export function Header({ locale = "es" }: { locale?: Locale }) {
   const [stuck, setStuck] = useState(false);
   const pathname = usePathname();
+  const navLinks = getNavLinks(locale);
 
   useEffect(() => {
     const barEl = document.querySelector<HTMLElement>("[data-announcement-bar]");
@@ -56,7 +61,7 @@ export function Header() {
       </div>
 
       <nav aria-label="Principal" className="flex gap-[34px] max-lg:hidden">
-        {NAV_LINKS.map((link) => (
+        {navLinks.map((link) => (
           <Link
             key={link.href}
             href={link.href}
@@ -71,20 +76,36 @@ export function Header() {
         ))}
       </nav>
 
-      <a
-        href={`tel:${PHONE_TEL}`}
+      <div
         className={cn(
-          "absolute right-[50px] border px-[18px] py-[9px] text-xs font-bold uppercase tracking-[0.2em] transition-colors max-lg:hidden",
-          stuck
-            ? "border-ink text-ink hover:bg-ink hover:text-tan"
-            : "border-white text-white hover:bg-white hover:text-grey"
+          "absolute right-[50px] flex items-center gap-6 transition-colors max-lg:hidden",
+          stuck ? "text-ink" : "text-white"
         )}
       >
-        <AnimatedBorder />
-        Llámanos
-      </a>
+        <LanguageToggle locale={locale} />
+        <a
+          href={`tel:${PHONE_TEL}`}
+          className={cn(
+            "relative border px-[18px] py-[9px] text-xs font-bold uppercase tracking-[0.2em] transition-colors",
+            stuck
+              ? "border-ink text-ink hover:bg-ink hover:text-tan"
+              : "border-white text-white hover:bg-white hover:text-grey"
+          )}
+        >
+          <AnimatedBorder />
+          {callLabel[locale]}
+        </a>
+      </div>
 
-      <MobileMenu stuck={stuck} />
+      <div
+        className={cn(
+          "flex items-center gap-4 transition-colors lg:hidden",
+          stuck ? "text-ink" : "text-white"
+        )}
+      >
+        <LanguageToggle locale={locale} />
+        <MobileMenu stuck={stuck} locale={locale} />
+      </div>
     </header>
   );
 }

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { UnderlineLink } from "@/components/ui/ghost-button";
+import type { Locale } from "@/lib/i18n";
 
 const slides = [
   { src: "/img/photos/hero-night-yard.jpg", width: 1600, height: 1600 },
@@ -11,7 +12,13 @@ const slides = [
   { src: "/img/photos/patio-lounge-pergola.jpg", width: 1440, height: 1078 },
 ];
 
-export function HeroSlider() {
+const copy = {
+  es: { cta: "Solicita tu Consulta", href: "/contacto" },
+  en: { cta: "Request a Consultation", href: "/en/contacto" },
+} as const;
+
+export function HeroSlider({ locale = "es" }: { locale?: Locale }) {
+  const t = copy[locale];
   const [active, setActive] = useState(0);
   const [loaded, setLoaded] = useState<Set<number>>(() => new Set([0]));
 
@@ -85,8 +92,8 @@ export function HeroSlider() {
           transition={{ delay: 0.45, duration: 0.5 }}
           className="mt-9"
         >
-          <UnderlineLink href="/contacto" light>
-            Solicita tu Consulta
+          <UnderlineLink href={t.href} light>
+            {t.cta}
           </UnderlineLink>
         </motion.div>
       </div>

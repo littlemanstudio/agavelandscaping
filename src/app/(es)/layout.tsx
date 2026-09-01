@@ -1,27 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { Oswald, Karla } from "next/font/google";
 import { MotionConfig } from "motion/react";
-import "./globals.css";
+import "../globals.css";
+import { oswald, karla } from "@/lib/fonts";
 import { SITE_URL, SITE_NAME } from "@/lib/constants";
 import { AnnouncementBar } from "@/components/layout/announcement-bar";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { BackToTop } from "@/components/layout/back-to-top";
-
-const oswald = Oswald({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-oswald",
-  display: "swap",
-});
-
-const karla = Karla({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  style: ["normal", "italic"],
-  variable: "--font-karla",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -35,7 +20,7 @@ export const viewport: Viewport = {
   themeColor: "#4f5050",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function EsRootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="es"
@@ -49,11 +34,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           >
             Saltar al contenido
           </a>
-          <AnnouncementBar />
-          <Header />
+          <AnnouncementBar locale="es" />
+          <Header locale="es" />
           {children}
-          <Footer />
-          <BackToTop />
+          <Footer locale="es" />
+          <BackToTop locale="es" />
         </MotionConfig>
       </body>
     </html>

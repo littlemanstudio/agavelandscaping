@@ -11,7 +11,10 @@ export const metadata: Metadata = {
   title: "Servicios",
   description:
     "Seis servicios de diseño y paisajismo en Ponce, PR: jardín, grama artificial, upgrade, mantenimiento especializado, riego e iluminación. Estimado gratis.",
-  alternates: { canonical: "/servicios" },
+  alternates: {
+    canonical: "/servicios",
+    languages: { "es-PR": `${SITE_URL}/servicios`, en: `${SITE_URL}/en/servicios` },
+  },
   openGraph: {
     title: "Servicios | AGAVE Landscaping PR",
     description: "Diseño de jardines, grama artificial, upgrades, mantenimiento, riego e iluminación en Ponce, PR.",

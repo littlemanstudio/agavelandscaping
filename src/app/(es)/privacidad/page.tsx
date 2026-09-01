@@ -8,7 +8,10 @@ export const metadata: Metadata = {
   title: "Política de Privacidad y Protección de Datos",
   description:
     "Cómo AGAVE Landscaping PR recopila, usa y protege tu información al solicitar un estimado de diseño de jardines en toda Puerto Rico.",
-  alternates: { canonical: "/privacidad" },
+  alternates: {
+    canonical: "/privacidad",
+    languages: { "es-PR": `${SITE_URL}/privacidad`, en: `${SITE_URL}/en/privacidad` },
+  },
   robots: { index: false, follow: true },
   openGraph: {
     title: "Política de Privacidad y Protección de Datos | AGAVE Landscaping PR",

@@ -14,7 +14,10 @@ export const metadata: Metadata = {
   title: "Sobre Nosotros",
   description:
     "Conoce a AGAVE Landscaping PR: un estudio de diseño de jardines con más de 20 años de experiencia en Ponce, Puerto Rico. Diseñamos y construimos de inicio a fin.",
-  alternates: { canonical: "/nosotros" },
+  alternates: {
+    canonical: "/nosotros",
+    languages: { "es-PR": `${SITE_URL}/nosotros`, en: `${SITE_URL}/en/nosotros` },
+  },
   openGraph: {
     title: "Nosotros | AGAVE Landscaping PR",
     description:

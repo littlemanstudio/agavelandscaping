@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 import { ChevronUp } from "lucide-react";
 import { cn } from "@/lib/utils";
+import type { Locale } from "@/lib/i18n";
 
-export function BackToTop() {
+export function BackToTop({ locale = "es" }: { locale?: Locale }) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -17,7 +18,7 @@ export function BackToTop() {
   return (
     <a
       href="#"
-      aria-label="Volver arriba"
+      aria-label={locale === "en" ? "Back to top" : "Volver arriba"}
       onClick={(event) => {
         event.preventDefault();
         window.scrollTo({ top: 0, behavior: "smooth" });

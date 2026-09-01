@@ -8,7 +8,10 @@ export const metadata: Metadata = {
   title: "Términos y Condiciones de Servicio",
   description:
     "Conoce los términos y condiciones de AGAVE Landscaping PR: servicios de diseño y paisajismo, estimados gratis y cobertura en toda Puerto Rico.",
-  alternates: { canonical: "/terminos" },
+  alternates: {
+    canonical: "/terminos",
+    languages: { "es-PR": `${SITE_URL}/terminos`, en: `${SITE_URL}/en/terminos` },
+  },
   robots: { index: false, follow: true },
   openGraph: {
     title: "Términos y Condiciones de Servicio | AGAVE Landscaping PR",

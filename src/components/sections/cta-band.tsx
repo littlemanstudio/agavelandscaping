@@ -7,15 +7,20 @@ import type { ReactNode } from "react";
 import { GhostLink } from "@/components/ui/ghost-button";
 import { AnimatedBorder } from "@/components/ui/animated-border";
 import { PHONE_DISPLAY, PHONE_TEL, WHATSAPP_URL } from "@/lib/constants";
+import type { Locale } from "@/lib/i18n";
+
+const whatsappLabel = { es: "Escríbenos por WhatsApp", en: "Message Us on WhatsApp" } as const;
 
 export function CtaBand({
   heading,
   body,
   showPhoneButton = true,
+  locale = "es",
 }: {
   heading: string;
   body: ReactNode;
   showPhoneButton?: boolean;
+  locale?: Locale;
 }) {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
@@ -46,7 +51,7 @@ export function CtaBand({
           <p className="mb-8">{body}</p>
           <div className="flex flex-wrap gap-4">
             <GhostLink href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" animated>
-              Escríbenos por WhatsApp
+              {whatsappLabel[locale]}
             </GhostLink>
             {showPhoneButton && (
               <a
