@@ -31,7 +31,7 @@ export function HeroSlider() {
   }, [active]);
 
   return (
-    <section className="relative flex h-[100svh] min-h-[560px] items-center justify-center overflow-hidden bg-ink">
+    <section className="relative flex h-dvh min-h-[560px] items-center justify-center overflow-hidden bg-ink">
       <div className="absolute inset-0" aria-hidden="true">
         {slides.map((slide, index) =>
           loaded.has(index) ? (
