@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { PHONE_TEL, SOCIAL, WHATSAPP_URL } from "@/lib/constants";
-import { type Locale, getNavLinks } from "@/lib/i18n";
+import { getLocaleFromPathname, getNavLinks } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { MobileMenu } from "@/components/layout/mobile-menu";
 import { LanguageToggle } from "@/components/layout/language-toggle";
@@ -19,9 +19,10 @@ const socialLinks = [
 
 const callLabel = { es: "Llámanos", en: "Call Us" } as const;
 
-export function Header({ locale = "es" }: { locale?: Locale }) {
+export function Header() {
   const [stuck, setStuck] = useState(false);
   const pathname = usePathname();
+  const locale = getLocaleFromPathname(pathname);
   const navLinks = getNavLinks(locale);
 
   useEffect(() => {

@@ -1,7 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { EMAIL, PHONE_DISPLAY, PHONE_TEL, SOCIAL, WHATSAPP_URL } from "@/lib/constants";
-import { type Locale } from "@/lib/i18n";
+import { getLocaleFromPathname } from "@/lib/i18n";
 import { FacebookIcon, InstagramIcon, WhatsAppIcon } from "@/components/icons/social";
 
 const socialLinks = [
@@ -39,7 +42,9 @@ const copy = {
   },
 } as const;
 
-export function Footer({ locale = "es" }: { locale?: Locale }) {
+export function Footer() {
+  const pathname = usePathname();
+  const locale = getLocaleFromPathname(pathname);
   const t = copy[locale];
 
   return (

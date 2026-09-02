@@ -1,4 +1,7 @@
-import type { Locale } from "@/lib/i18n";
+"use client";
+
+import { usePathname } from "next/navigation";
+import { getLocaleFromPathname } from "@/lib/i18n";
 import { PHONE_DISPLAY, PHONE_TEL } from "@/lib/constants";
 
 const copy = {
@@ -22,7 +25,9 @@ const copy = {
   },
 } as const;
 
-export function AnnouncementBar({ locale = "es" }: { locale?: Locale }) {
+export function AnnouncementBar() {
+  const pathname = usePathname();
+  const locale = getLocaleFromPathname(pathname);
   const t = copy[locale];
   return (
     <div

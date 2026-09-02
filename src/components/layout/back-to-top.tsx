@@ -1,12 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { ChevronUp } from "lucide-react";
 import { cn } from "@/lib/utils";
-import type { Locale } from "@/lib/i18n";
+import { getLocaleFromPathname } from "@/lib/i18n";
 
-export function BackToTop({ locale = "es" }: { locale?: Locale }) {
+export function BackToTop() {
   const [visible, setVisible] = useState(false);
+  const pathname = usePathname();
+  const locale = getLocaleFromPathname(pathname);
 
   useEffect(() => {
     const onScroll = () => setVisible(window.scrollY > 800);

@@ -1,5 +1,9 @@
 export type Locale = "es" | "en";
 
+export function getLocaleFromPathname(pathname: string): Locale {
+  return pathname === "/en" || pathname.startsWith("/en/") ? "en" : "es";
+}
+
 const navLinksEs = [
   { title: "Inicio", href: "/" },
   { title: "Nosotros", href: "/nosotros" },
