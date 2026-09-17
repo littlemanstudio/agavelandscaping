@@ -44,7 +44,7 @@ export function buildContactEmailHtml(data: ContactEmailData) {
           <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width: 600px; max-width: 100%; background-color: #ffffff;">
             <tr>
               <td align="center" style="background-color: #2f3030; padding: 36px 32px 30px;">
-                <img src="${logoUrl}" width="48" height="48" alt="Agave Landscaping PR" style="display: block; margin: 0 auto 14px;" />
+                <img src="${logoUrl}" width="56" height="43" alt="Agave Landscaping PR" style="display: block; margin: 0 auto 14px;" />
                 <div style="font-family: 'Oswald', Arial, sans-serif; font-size: 15px; letter-spacing: 0.32em; text-transform: uppercase; color: #f4ead6;">
                   Agave Landscaping PR
                 </div>
