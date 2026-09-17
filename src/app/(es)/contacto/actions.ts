@@ -66,7 +66,7 @@ export async function submitContactForm(
 
   try {
     const resend = new Resend(apiKey);
-    await resend.emails.send({
+    const { error: sendError } = await resend.emails.send({
       from: "AGAVE Landscaping PR <onboarding@resend.dev>",
       to: EMAIL,
       replyTo: email,
@@ -82,6 +82,14 @@ export async function submitContactForm(
         `Detalles: ${detalles || "(sin detalles adicionales)"}`,
       ].join("\n"),
     });
+
+    if (sendError) {
+      console.error("Resend rejected the contact form email:", sendError);
+      return {
+        status: "error",
+        message: t.unavailable,
+      };
+    }
 
     return {
       status: "success",
