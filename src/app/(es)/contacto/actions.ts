@@ -3,6 +3,7 @@
 import { Resend } from "resend";
 import { contactSchema } from "@/lib/validations/contact";
 import { EMAIL } from "@/lib/constants";
+import { buildContactEmailHtml } from "@/lib/email-template";
 
 export type ContactFormState = {
   status: "idle" | "success" | "error";
@@ -71,6 +72,16 @@ export async function submitContactForm(
       to: EMAIL,
       replyTo: email,
       subject: `Nueva solicitud de estimado: ${nombre}`,
+      html: buildContactEmailHtml({
+        nombre,
+        telefono,
+        email,
+        servicio,
+        ancho,
+        largo,
+        detalles: detalles ?? "",
+        locale,
+      }),
       text: [
         `Idioma del visitante: ${locale === "en" ? "Inglés" : "Español"}`,
         `Nombre: ${nombre}`,
