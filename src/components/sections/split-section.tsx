@@ -6,11 +6,13 @@ export function SplitSection({
   id,
   image,
   imageAlt,
+  rounded = false,
   children,
 }: {
   id?: string;
   image: string;
   imageAlt: string;
+  rounded?: boolean;
   children: ReactNode;
 }) {
   return (
@@ -19,7 +21,7 @@ export function SplitSection({
         <Reveal direction="left">{children}</Reveal>
 
         <Reveal direction="right" delay={300}>
-          <div className="relative aspect-square overflow-hidden bg-tan/40">
+          <div className={`relative aspect-square overflow-hidden bg-tan/40${rounded ? " rounded-3xl" : ""}`}>
             <Image
               src={image}
               alt={imageAlt}

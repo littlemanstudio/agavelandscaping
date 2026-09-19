@@ -36,7 +36,7 @@ export function AboutTeaser({ locale = "es" }: { locale?: Locale }) {
         </Reveal>
 
         <Reveal direction="right" delay={300}>
-          <div className="relative aspect-square overflow-hidden bg-tan/40">
+          <div className="relative aspect-square overflow-hidden rounded-3xl bg-tan/40">
             <Image
               src="/img/photos/founder-portrait.jpg"
               alt={t.alt}

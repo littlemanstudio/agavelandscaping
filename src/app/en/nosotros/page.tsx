@@ -50,7 +50,7 @@ export default function NosotrosPageEn() {
 
       <PageHero eyebrow="About" title="Who We Are" subtitle="From sketch to the last stone." />
 
-      <SplitSection image="/img/photos/founder-portrait.jpg" imageAlt="AGAVE Landscaping PR founder in a freshly installed patio with agaves and succulents">
+      <SplitSection rounded image="/img/photos/founder-portrait.jpg" imageAlt="AGAVE Landscaping PR founder in a freshly installed patio with agaves and succulents">
         <p className="text-[clamp(21px,2.2vw,27px)] leading-[1.45] text-ink">
           At AGAVE Landscaping PR, we transform spaces through a complete
           landscape design and construction process.
