@@ -84,7 +84,7 @@ export default function HomePageEn() {
           It&apos;s Art.
         </h2>
         <p className="text-ink">
-          We don&apos;t just cut grass. We design complete gardens, renovate
+          We design complete gardens, we don&apos;t just cut grass. We renovate
           the ones you already have, and install artificial turf, irrigation,
           and lighting. We measure, we design, and we show you the result
           before touching a single stone.

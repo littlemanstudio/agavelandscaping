@@ -84,7 +84,7 @@ export default function HomePage() {
           Es Arte.
         </h2>
         <p className="text-ink">
-          No solo cortamos grama. Diseñamos jardines completos, renovamos los
+          Diseñamos jardines completos, no solo cortamos grama. Renovamos los
           que ya tienes e instalamos grama artificial, riego e iluminación.
           Medimos, diseñamos y te mostramos el resultado antes de tocar una
           piedra.
