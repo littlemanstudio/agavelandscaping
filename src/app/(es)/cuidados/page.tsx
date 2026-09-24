@@ -61,7 +61,7 @@ export default function CuidadosPage() {
         ]}
       />
 
-      <SplitSection image="/img/photos/macro-agave-snake-plant.jpg" imageAlt="Agave y sansevieria en un cantero de roca clara">
+      <SplitSection image="/img/photos/crew-agave-closeup-poster.jpg" video="/videos/crew-agave-closeup.mp4" imageAlt="Agave y sansevieria en un cantero de roca clara">
         <p className="text-[clamp(21px,2.2vw,27px)] leading-[1.45] text-ink">
           El mejor mantenimiento empieza en el diseño, no después.
         </p>

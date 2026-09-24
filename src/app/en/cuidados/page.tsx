@@ -61,7 +61,7 @@ export default function CuidadosPageEn() {
         ]}
       />
 
-      <SplitSection image="/img/photos/macro-agave-snake-plant.jpg" imageAlt="Agave and snake plant in a light rock bed">
+      <SplitSection image="/img/photos/crew-agave-closeup-poster.jpg" video="/videos/crew-agave-closeup.mp4" imageAlt="Agave and snake plant in a light rock bed">
         <p className="text-[clamp(21px,2.2vw,27px)] leading-[1.45] text-ink">
           The best maintenance starts in the design, not after.
         </p>

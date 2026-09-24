@@ -73,7 +73,7 @@ export default function ServiciosPageEn() {
 
       <PageHero eyebrow="Services" title="Our Services" subtitle="Six services, from design to installation." />
 
-      <EditorialSplit image="/img/photos/macro-agave-snake-plant.jpg" imageAlt="Agave and snake plant in a light rock bed">
+      <EditorialSplit image="/img/photos/crew-trees-on-truck-poster.jpg" video="/videos/crew-trees-on-truck.mp4" imageAlt="Agave and snake plant in a light rock bed">
         <p className="mb-3.5 text-[13px] font-bold uppercase tracking-[0.28em] text-sage-deep">
           From Sketch to Installation
         </p>

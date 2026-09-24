@@ -1,17 +1,20 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { Reveal } from "@/components/motion/reveal";
+import { InViewVideo } from "@/components/ui/in-view-video";
 
 export function SplitSection({
   id,
   image,
   imageAlt,
+  video,
   rounded = false,
   children,
 }: {
   id?: string;
   image: string;
   imageAlt: string;
+  video?: string;
   rounded?: boolean;
   children: ReactNode;
 }) {
@@ -22,14 +25,18 @@ export function SplitSection({
 
         <Reveal direction="right" delay={300}>
           <div className={`relative aspect-square overflow-hidden bg-tan/40${rounded ? " rounded-3xl" : ""}`}>
-            <Image
-              src={image}
-              alt={imageAlt}
-              fill
-              sizes="(max-width: 1024px) 90vw, 440px"
-              quality={88}
-              className="object-cover"
-            />
+            {video ? (
+              <InViewVideo src={video} poster={image} />
+            ) : (
+              <Image
+                src={image}
+                alt={imageAlt}
+                fill
+                sizes="(max-width: 1024px) 90vw, 440px"
+                quality={88}
+                className="object-cover"
+              />
+            )}
           </div>
         </Reveal>
       </div>

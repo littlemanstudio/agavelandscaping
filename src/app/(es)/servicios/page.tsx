@@ -73,7 +73,7 @@ export default function ServiciosPage() {
 
       <PageHero eyebrow="Servicios" title="Nuestros Servicios" subtitle="Seis servicios, del diseño a la instalación." />
 
-      <EditorialSplit image="/img/photos/macro-agave-snake-plant.jpg" imageAlt="Agave y sansevieria en un cantero de roca clara">
+      <EditorialSplit image="/img/photos/crew-trees-on-truck-poster.jpg" video="/videos/crew-trees-on-truck.mp4" imageAlt="Agave y sansevieria en un cantero de roca clara">
         <p className="mb-3.5 text-[13px] font-bold uppercase tracking-[0.28em] text-sage-deep">
           De Boceto a Instalación
         </p>

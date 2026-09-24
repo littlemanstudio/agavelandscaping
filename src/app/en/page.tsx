@@ -72,7 +72,7 @@ export default function HomePageEn() {
       </section>
 
       <EditorialSplit
-        image="/img/photos/macro-agave-snake-plant.jpg"
+        image="/img/photos/crew-truck-en-route-poster.jpg" video="/videos/crew-truck-en-route.mp4"
         imageAlt="Agave and snake plant in a light rock bed"
       >
         <p className="mb-3.5 text-[13px] font-bold uppercase tracking-[0.28em] text-sage-deep">
