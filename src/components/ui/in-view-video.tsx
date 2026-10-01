@@ -18,15 +18,27 @@ export function InViewVideo({
     if (!video) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
+    let playTimer: ReturnType<typeof setTimeout> | undefined;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) void video.play().catch(() => {});
-        else video.pause();
+        clearTimeout(playTimer);
+        if (entry.isIntersecting) {
+          // Wait out the scroll gesture before decoding starts, so playback
+          // never kicks off on the same frame the video enters view (the
+          // scroll-stutter culprit on mobile Safari).
+          playTimer = setTimeout(() => void video.play().catch(() => {}), 150);
+        } else {
+          video.pause();
+        }
       },
-      { threshold: 0.4 }
+      { threshold: 0.5, rootMargin: "80px 0px" }
     );
     observer.observe(video);
-    return () => observer.disconnect();
+    return () => {
+      clearTimeout(playTimer);
+      observer.disconnect();
+    };
   }, []);
 
   return (
@@ -36,7 +48,9 @@ export function InViewVideo({
       muted
       loop
       playsInline
-      preload="none"
+      disablePictureInPicture
+      disableRemotePlayback
+      preload="metadata"
       poster={poster}
     >
       <source src={src} type="video/mp4" />
