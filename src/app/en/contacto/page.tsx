@@ -74,6 +74,12 @@ export default function ContactoPageEn() {
                 {PHONE_DISPLAY}
               </a>
             </div>
+            <div className="mt-10 bg-tan p-6 max-md:p-5">
+              <p className="mb-5 text-[13px] font-bold uppercase tracking-[0.28em] text-sage-deep">
+                Request Your Estimate
+              </p>
+              <ContactForm locale="en" />
+            </div>
           </Reveal>
 
           <Reveal direction="right" delay={300}>
@@ -106,22 +112,6 @@ export default function ContactoPageEn() {
         </div>
       </section>
 
-      <section className="bg-tan py-[92px] max-md:py-16">
-        <div className="mx-auto max-w-[1320px] px-8 max-md:px-[22px]">
-          <div className="mx-auto mb-12 max-w-[640px] text-center">
-            <p className="mb-3.5 text-[13px] font-bold uppercase tracking-[0.28em] text-sage-deep">
-              Request Your Estimate
-            </p>
-            <h2 className="font-display text-[clamp(28px,3.4vw,42px)] font-semibold uppercase text-ink">
-              Tell Us About Your Project
-            </h2>
-            <p className="mt-3.5 text-[clamp(21px,2.2vw,27px)] leading-[1.45] text-ink">
-              The more details you give us, the faster we can show you a real design.
-            </p>
-          </div>
-          <ContactForm locale="en" />
-        </div>
-      </section>
 
       <SkimmerGrid
         eyebrow="What to Expect"
