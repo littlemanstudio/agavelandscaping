@@ -36,11 +36,11 @@ export async function submitContactForm(
   const raw = {
     nombre: formData.get("nombre"),
     telefono: formData.get("telefono"),
-    email: formData.get("email"),
+    email: formData.get("email") ?? "",
     servicio: formData.get("servicio"),
-    ancho: formData.get("ancho"),
-    largo: formData.get("largo"),
-    detalles: formData.get("detalles"),
+    ancho: formData.get("ancho") ?? "",
+    largo: formData.get("largo") ?? "",
+    detalles: formData.get("detalles") ?? "",
   };
 
   const parsed = contactSchema.safeParse(raw);
@@ -70,7 +70,7 @@ export async function submitContactForm(
     const { error: sendError } = await resend.emails.send({
       from: "AGAVE Landscaping PR <no-reply@agavelandscapingpr.com>",
       to: EMAIL,
-      replyTo: email,
+      ...(email ? { replyTo: email } : {}),
       subject: `Nueva solicitud de estimado: ${nombre}`,
       html: buildContactEmailHtml({
         nombre,
@@ -86,10 +86,10 @@ export async function submitContactForm(
         `Idioma del visitante: ${locale === "en" ? "Inglés" : "Español"}`,
         `Nombre: ${nombre}`,
         `Teléfono: ${telefono}`,
-        `Email: ${email}`,
+        ...(email ? [`Email: ${email}`] : []),
         `Servicio: ${servicio}`,
-        `Ancho del área: ${ancho} pies`,
-        `Largo del área: ${largo} pies`,
+        ...(ancho ? [`Ancho del área: ${ancho} pies`] : []),
+        ...(largo ? [`Largo del área: ${largo} pies`] : []),
         `Detalles: ${detalles || "(sin detalles adicionales)"}`,
       ].join("\n"),
     });

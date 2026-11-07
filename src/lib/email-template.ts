@@ -5,8 +5,8 @@ type ContactEmailData = {
   telefono: string;
   email: string;
   servicio: string;
-  ancho: number;
-  largo: number;
+  ancho?: number;
+  largo?: number;
   detalles: string;
   locale: "es" | "en";
 };
@@ -67,10 +67,10 @@ export function buildContactEmailHtml(data: ContactEmailData) {
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                   ${row("Nombre", nombre)}
                   ${row("Teléfono", telefono)}
-                  ${row("Email", email)}
+                  ${email ? row("Email", email) : ""}
                   ${row("Servicio", servicio)}
-                  ${row("Ancho del área", `${String(ancho)} pies`)}
-                  ${row("Largo del área", `${String(largo)} pies`)}
+                  ${ancho ? row("Ancho del área", `${String(ancho)} pies`) : ""}
+                  ${largo ? row("Largo del área", `${String(largo)} pies`) : ""}
                 </table>
               </td>
             </tr>
@@ -87,7 +87,7 @@ export function buildContactEmailHtml(data: ContactEmailData) {
             <tr>
               <td style="background-color: #f4ead6; padding: 20px 32px; text-align: center;">
                 <div style="font-family: 'Karla', Arial, sans-serif; font-size: 12px; color: #4f5050;">
-                  Responde a este correo para contactar directamente a ${esc(nombre)}.
+                  ${email ? `Responde a este correo para contactar directamente a ${esc(nombre)}.` : `Llama o escribe por WhatsApp a ${esc(nombre)} al ${esc(telefono)}.`}
                 </div>
               </td>
             </tr>
